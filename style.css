@@ -1,0 +1,83 @@
+body {
+font-family: 'Roboto',
+monospace;
+	margin: 0;
+	padding: 0;
+	background-color: #00CED1;
+	color: black;
+}
+#about {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+#skills {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.progress-container {
+    width: 80%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 30px;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: width 0.1s ease-in-out;
+}
+
+header {
+	text-align: center;
+	padding: 1em 0;
+	border-bottom: 1px dashed black;
+}
+
+a {
+	margin: 0 15px;
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+section {
+padding: 2em;
+}
+
+img.profile {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+	border: 2px solid black;
+}
+
+details {
+	border: 2px dashed black;
+	padding: 1em;
+	margin: 10px;
+	border-radius: 0;
+	transition: all 0.3s;
+}
+
+details:hover {
+	border: 2px solid black;
+}
+h2 {
+ text-align: center;
+}
