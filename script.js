@@ -1,31 +1,41 @@
-document.addEventListener(
- "DOMContentLoaded",
- function() {
-  // Seleciona todas as barras de progresso e textos de progresso
-  let progressBars = document
-   .querySelectorAll(".progress-bar");
-  let progressTexts = document
-   .querySelectorAll(
-    ".progress-text");
+const burger = document
+ .querySelector('.burger');
+const navLinks = document
+ .querySelector('.nav-links');
 
-  function updateProgress(bar, text,
-   progress) {
-   if (progress <= 100) {
-    bar.style.width = progress + "%";
-    text.textContent = progress + "%";
-    setTimeout(function() {
-     updateProgress(bar, text,
-      progress + 1);
-    }, 100); // Atualiza a cada 100ms
-   }
-  }
-
-  // Itera sobre todas as barras de progresso e textos
-  progressBars.forEach((progressBar,
-   index) => {
-   let progressText = progressTexts[
-    index];
-   updateProgress(progressBar,
-    progressText, 0);
-  });
+burger.addEventListener('click',
+ () => {
+  navLinks.classList.toggle(
+   'active');
+  burger.classList.toggle(
+   'toggle');
  });
+
+const faders = document
+ .querySelectorAll('.fade-in');
+
+const appearOptions = {
+ threshold: 0.2,
+ rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll =
+ new IntersectionObserver(
+  function(entries,
+   appearOnScroll) {
+   entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+     return;
+    } else {
+     entry.target.classList.add(
+      'show');
+     appearOnScroll.unobserve(
+      entry.target
+     );
+    }
+   });
+  }, appearOptions);
+
+faders.forEach(fader => {
+ appearOnScroll.observe(fader);
+});
