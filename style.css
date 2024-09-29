@@ -1,100 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-font-family: 'Roboto',
-monospace;
-	margin: 0;
-	padding: 0;
-	background-color: #00CED1;
-	color: black;
-}
-#about {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-}
-#skills {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
-.progress-container {
-    width: 80%;
-    background-color: #e0e0e0;
-    border-radius: 25px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    width: 0;
-    height: 30px;
-    background-color: #4caf50;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    font-weight: bold;
-    border-radius: 25px;
-    transition: width 0.1s ease-in-out;
-}
-
-header {
-	text-align: center;
-	padding: 1em 0;
-	border-bottom: 1px dashed black;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
 a {
-	margin: 0 15px;
-	color: blue;
-	text-decoration: none;
+  text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
-section {
-padding: 2em;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-img.profile {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	display: block;
-	margin: 0 auto;
-	border: 2px solid black;
-animation: bounce 2s infinite;
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
-details {
-	border: 2px dashed black;
-	padding: 1em;
-	margin: 10px;
-	border-radius: 0;
-	transition: all 0.3s;
+.nav-links li {
+  margin: 0 15px;
 }
 
-details:hover {
-	border: 2px solid black;
-}
-h2 {
- text-align: center;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-@keyframes bounce { 
-  0%,
-  20%,
-  50% ,
-  80% ,
-  100% {
-    transform: translateY(0);
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0 10px;
+}
+
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #f39c12;
+  object-fit: cover;
+}
+
+.nome-perfil {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f39c12;
+  margin-top: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.nome-perfil:hover {
+  color: #e67e22;
+}
+
+.home {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: -20px;
+}
+
+.home .highlight {
+  color: #f39c12;
+}
+
+.sobre {
+  padding: 40px 20px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.sobre h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.sobre p {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.projetos, .habilidades {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.projetos h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projeto, .habilidade {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.habilidades h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contato {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contato form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contato input, 
+.contato textarea, 
+.contato button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contato textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contato button {
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.contato button:hover {
+  background-color: #e67e22;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+footer .social-icons {
+  margin-top: 15px;
+}
+
+footer .social-icon {
+  color: white;
+  font-size: 32px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+  color: #f39c12;
+}
+
+footer .social-icon i {
+  transition: transform 0.3s ease;
+}
+
+footer .social-icon:hover i {
+  transform: scale(1.2);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px 0;
   }
-  40% {
-    transform: translateY(-10px); 
+
+  .nav-links.active {
+    display: flex;
   }
-  60% {
-    transform: translateY(-5px);
+
+  .burger {
+    display: block;
   }
 }
