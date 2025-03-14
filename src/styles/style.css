@@ -82,9 +82,7 @@ nav {
   font-weight: bold;
   color: #f39c12;
   margin-top: 10px;
-  text-decoration: none;
   text-align: center;
-  display: inline-block;
   width: 100%;
   transition: color 0.3s ease;
 }
@@ -98,7 +96,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
   text-align: center;
   padding-top: 10px;
   margin-top: -20px;
@@ -131,7 +128,7 @@ nav {
   text-align: center;
 }
 
-.projetos h2 {
+.projetos h2, .habilidades h2 {
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -149,11 +146,6 @@ nav {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   box-sizing: border-box;
-}
-
-.habilidades h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
 }
 
 .contato {
@@ -266,7 +258,6 @@ footer .social-icon:hover i {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    height: auto;
     border-radius: 10px;
     padding: 20px 0;
   }
